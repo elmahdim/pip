@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Picture-in-Picture</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Elsie" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="intro" data-hide="if-active">
+      <h1>Picture-in-Picture</h1>
+      <form name="typeSwicther" data-hide="if-active">
+        <label for="stream">
+          <input type="radio" name="demoType" id="stream" value="local-stream">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496" fill="#2F3C99">
+            <path d="M456 112H270.5a23.9 23.9 0 0 0-45 0H40c-22 0-40 18-40 40v256c0 22 18 40 40 40h112v32h-16v16h224v-16h-16v-32h112c22 0 40-18 40-40V152c0-22-18-40-40-40zm-208 0a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm80 368H168v-32h160v32zm152-72a24 24 0 0 1-24 24H40a24 24 0 0 1-24-24v-8h464v8zm0-24H16V152a24 24 0 0 1 24-24h185.5a23.9 23.9 0 0 0 45 0H456a24 24 0 0 1 24 24v232z"/>
+            <path d="M32 368h432V144H32v224zm16-208h400v192H48V160z"/>
+            <path d="M64 176h16v16H64zM96 176h16v16H96zM128 176h16v16h-16zM278 242.1a39.7 39.7 0 0 0-30-66.1 39.7 39.7 0 1 0-30 66.1 48 48 0 0 0-34 45.9v48h128v-48a48 48 0 0 0-34-45.9zM248 192a24 24 0 1 1 0 48 24 24 0 0 1 0-48zm48 128h-16v-40h-16v40h-32v-40h-16v40h-16v-32a32 32 0 0 1 32-32h32a32 32 0 0 1 32 32v32zM248 16c33.4 0 65 16.3 84.6 43.6l13-9.3C323 18.8 286.6 0 248 0s-75 18.8-97.6 50.3l13 9.3A104.3 104.3 0 0 1 248 16z"/>
+            <path d="M306.5 78.2l13-9.3A88.3 88.3 0 0 0 248 32c-28.3 0-55 13.8-71.6 36.9l13 9.3C203 59.2 225 48 248 48s45 11.3 58.5 30.2z"/>
+            <path d="M202.5 87.5l13 9.3a40 40 0 0 1 65 0l13-9.3a56.1 56.1 0 0 0-91 0zM64 208h16v16H64zM96 208h16v16H96zM64 240h16v16H64zM416 312h16v16h-16zM384 312h16v16h-16zM352 312h16v16h-16zM416 280h16v16h-16zM384 280h16v16h-16zM416 248h16v16h-16z"/>
+          </svg>
+        </label>
+        <label for="watch">
+          <input type="radio" name="demoType" id="watch" value="watch">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="#2F3C99">
+            <path d="M56 136h16v16H56zM24 136h16v16H24zM88 136h16v16H88zM120 136h16v16h-16zM152 136h16v16h-16zM184 136h16v16h-16zM216 136h16v16h-16zM248 136h16v16h-16zM280 136h16v16h-16zM312 136h16v16h-16zM344 136h16v16h-16zM376 136h16v16h-16zM408 136h16v16h-16zM440 136h16v16h-16zM56 392h16v16H56zM24 392h16v16H24zM88 392h16v16H88zM120 392h16v16h-16zM152 392h16v16h-16zM184 392h16v16h-16zM216 392h16v16h-16zM248 392h16v16h-16zM280 392h16v16h-16zM312 392h16v16h-16zM344 392h16v16h-16zM376 392h16v16h-16zM408 392h16v16h-16zM440 392h16v16h-16z"/>
+            <path d="M472 104h-32V80a8 8 0 0 0-8-8h-32V48a8 8 0 0 0-8-8H88a8 8 0 0 0-8 8v24H48a8 8 0 0 0-8 8v24H8a8 8 0 0 0-8 8v320a8 8 0 0 0 8 8h464a8 8 0 0 0 8-8V112a8 8 0 0 0-8-8zM96 56h288v16H96V56zM56 88h368v16H56V88zm408 336H16V120h448v304z"/>
+            <path d="M200 346.5a8 8 0 0 0 12.6 6.6L319 278.6a8 8 0 0 0 0-13.2L212.6 191a8 8 0 0 0-12.6 6.6v149zm16-133.7l84.6 59.2-84.6 59.2V212.8z"/>
+          </svg>
+        </label>
+      </form>
+    </div>
+    <div data-show="if-active">
+      <div class="demo">
+        <video></video>
+        <footer class="control-bar">
+          <button type="button" class="btn" id="reset">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 225">
+              <path fill="#fabd1c" d="M224.5 7l-7-7-105.2 105.3L7 0 0 7l105.3 105.3L0 217.5l7 7 105.3-105.3 105.2 105.3 7-7-105.3-105.2z"/>
+            </svg>
+          </button>
+          <button type="button" class="btn" id="play" data-show="if-watch">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.999 41.999" data-hide="if-playing">
+              <path fill="#2F3C99" d="M36 20.2L7 .2a1 1 0 0 0-1.5.8v40a1 1 0 0 0 1.6.8l29-20a1 1 0 0 0 0-1.6zM7.6 39V2.9L33.7 21 7.5 39z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 314 314" fill="#2F3C99" data-show="if-playing">
+              <path d="M91.5 0H75.3A30.5 30.5 0 0 0 45 30.5v253A30.5 30.5 0 0 0 75.3 314h16.2a30.5 30.5 0 0 0 30.4-30.5v-253A30.5 30.5 0 0 0 91.5 0zm16.4 283.5c0 9.1-7.3 16.5-16.4 16.5H75.3c-9 0-16.4-7.4-16.4-16.5v-253c0-9.1 7.4-16.5 16.4-16.5h16.2c9 0 16.4 7.4 16.4 16.5v253zM238.7 0h-16.2a30.5 30.5 0 0 0-30.4 30.5v253a30.5 30.5 0 0 0 30.4 30.5h16.2a30.5 30.5 0 0 0 30.4-30.5v-253A30.5 30.5 0 0 0 238.7 0zM255 283.5c0 9.1-7.4 16.5-16.4 16.5h-16.2c-9 0-16.4-7.4-16.4-16.5v-253c0-9.1 7.3-16.5 16.4-16.5h16.2c9 0 16.4 7.4 16.4 16.5v253z"/>
+            </svg>
+          </button>
+          <button type="button" class="btn" id="pip">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="#2F3C99">
+              <path d="M60 6H14v7H7v7H0v34h46v-7h7v-7h7V6zM44 52H2V22h5v25h37v5zm7-7H9V15h5v25h37v5zm7-7H16V8h42v30z"/>
+              <circle cx="34" cy="44" r="1"/>
+              <circle cx="37" cy="41" r="1"/>
+              <circle cx="40" cy="44" r="1"/>
+              <circle cx="46" cy="44" r="1"/>
+              <circle cx="43" cy="41" r="1"/>
+              <circle cx="49" cy="41" r="1"/>
+              <circle cx="28" cy="44" r="1"/>
+              <circle cx="31" cy="41" r="1"/>
+              <circle cx="10" cy="44" r="1"/>
+              <circle cx="10" cy="38" r="1"/>
+              <circle cx="13" cy="41" r="1"/>
+              <circle cx="13" cy="35" r="1"/>
+              <circle cx="16" cy="44" r="1"/>
+              <circle cx="22" cy="44" r="1"/>
+              <circle cx="19" cy="41" r="1"/>
+              <circle cx="25" cy="41" r="1"/>
+              <circle cx="10" cy="32" r="1"/>
+              <circle cx="10" cy="26" r="1"/>
+              <circle cx="13" cy="29" r="1"/>
+              <circle cx="13" cy="23" r="1"/>
+              <circle cx="10" cy="20" r="1"/>
+              <circle cx="13" cy="17" r="1"/>
+            </svg>
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
